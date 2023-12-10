@@ -4,8 +4,8 @@ pipeline {
     environment {
         AWS_DEFAULT_REGION = 'us-east-1'
         EKS_CLUSTER_NAME = 'demo'
-       AWS_ROLE_TO_ASSUME = 'arn:aws:iam::612500737416:role/access-cluster-role'
-       TERRAFORM_DIR = '.terraform'
+        AWS_ROLE_TO_ASSUME = 'arn:aws:iam::612500737416:role/access-cluster-role'
+        TERRAFORM_DIR = '.terraform'
         SLACK_CHANNEL = '#buildstatus-jenkins-pipeline'
         SLACK_TOKEN = credentials('jenkins-slack-integration')
 
@@ -77,7 +77,7 @@ pipeline {
         }
     }
 }
-*/
+
 
         stage('Update kube-config') {
             steps {
