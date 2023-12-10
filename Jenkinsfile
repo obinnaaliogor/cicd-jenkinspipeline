@@ -24,7 +24,7 @@ pipeline {
                 script {
                     echo "Checking out code from GitHub"
                     // Clone the code from GitHub
-                    git 'https://github.com/obinnaaliogor/cicd-jenkinspipeline.git'
+                    //git 'https://github.com/obinnaaliogor/cicd-jenkinspipeline.git'
                 }
             }
         }
