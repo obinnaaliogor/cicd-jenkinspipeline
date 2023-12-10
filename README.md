@@ -10,4 +10,4 @@ chmod +x terraform_script.sh
 
 #Ensure you openned port 8080 on the jenkins server
 
-http://3.85.164.49:8080/
+https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
