@@ -46,30 +46,26 @@ pipeline {
     }
 
     post {
-        success {
-            // Notify success on Slack
-            script {
-                slackSend(
-
-                    color: 'good',
-                    message: "Pipeline succeeded for ${env.JOB_NAME} ${env.BUILD_NUMBER}: ${env.BUILD_URL}",
-                    slackSend channel: "#buildstatus-jenkins-pipeline" , message: "Build started: ${env.JOB_NAME} ${env.BUILD_NUMBER} ${env.BUILD_URL}"
-
-
-                )
-            }
-        }
-        failure {
-            // Notify failure on Slack
-            script {
-                slackSend(
-        
-                    color: 'danger',
-                    message: "Pipeline failed for ${env.JOB_NAME} ${env.BUILD_NUMBER}: ${env.BUILD_URL}",
-                    slackSend channel: "#buildstatus-jenkins-pipeline" , message: "Build started: ${env.JOB_NAME} ${env.BUILD_NUMBER} ${env.BUILD_URL}"
-
-                )
-            }
+    success {
+        // Notify success on Slack
+        script {
+            slackSend(
+                channel: "#buildstatus-jenkins-pipeline",
+                color: 'good',
+                message: "Pipeline succeeded for ${env.JOB_NAME} ${env.BUILD_NUMBER}: ${env.BUILD_URL}"
+            )
         }
     }
+    failure {
+        // Notify failure on Slack
+        script {
+            slackSend(
+                channel: "#buildstatus-jenkins-pipeline",
+                color: 'danger',
+                message: "Pipeline failed for ${env.JOB_NAME} ${env.BUILD_NUMBER}: ${env.BUILD_URL}"
+            )
+        }
+    }
+}
+
 }
