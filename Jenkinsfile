@@ -4,7 +4,7 @@ pipeline {
     environment {
         AWS_DEFAULT_REGION = 'us-east-1'
         //EKS_CLUSTER_NAME = 'demo'
-        SLACK_CHANNEL = '#buildstatus-jenkins-pipeline'
+        SLACK_CHANNEL = 'buildstatus-jenkins-pipeline'
         SLACK_TOKEN = credentials('jenkins-slack-integration')
         AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
@@ -30,7 +30,7 @@ pipeline {
                 }
             }
         }
-
+//https://www.devopshint.com/how-to-install-jenkins-on-ubuntu-22-04-lts/
 
         stage('Deploy to Kubernetes') {
             steps {
