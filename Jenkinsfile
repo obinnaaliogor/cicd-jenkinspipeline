@@ -26,7 +26,7 @@ pipeline {
                 script {
                     // Assuming your kube-config file is stored securely in Jenkins credentials
                     //withCredentials([file(credentialsId: 'kube-config-credentials', variable: 'KUBE_CONFIG')]) {
-                    sh 'aws eks update-kubeconfig --name ${env.EKS_CLUSTER_NAME} --region us-east-1'
+                sh 'aws eks update-kubeconfig --name demo --region us-east-1'
                 }
             }
         }
