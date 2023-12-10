@@ -50,11 +50,11 @@ pipeline {
             // Notify success on Slack
             script {
                 slackSend(
-                    channel: SLACK_CHANNEL,
+
                     color: 'good',
                     message: "Pipeline succeeded for ${env.JOB_NAME} ${env.BUILD_NUMBER}: ${env.BUILD_URL}",
                     slackSend channel: "#buildstatus-jenkins-pipeline" , message: "Build started: ${env.JOB_NAME} ${env.BUILD_NUMBER} ${env.BUILD_URL}"
-                
+
 
                 )
             }
@@ -63,7 +63,7 @@ pipeline {
             // Notify failure on Slack
             script {
                 slackSend(
-                    channel: SLACK_CHANNEL,
+        
                     color: 'danger',
                     message: "Pipeline failed for ${env.JOB_NAME} ${env.BUILD_NUMBER}: ${env.BUILD_URL}",
                     slackSend channel: "#buildstatus-jenkins-pipeline" , message: "Build started: ${env.JOB_NAME} ${env.BUILD_NUMBER} ${env.BUILD_URL}"
