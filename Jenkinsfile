@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         AWS_DEFAULT_REGION = 'us-east-1'
-        EKS_CLUSTER_NAME = 'demo'
+        //EKS_CLUSTER_NAME = 'demo'
         SLACK_CHANNEL = '#buildstatus-jenkins-pipeline'
         SLACK_TOKEN = credentials('jenkins-slack-integration')
         AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
