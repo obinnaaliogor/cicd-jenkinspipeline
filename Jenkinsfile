@@ -4,15 +4,15 @@ pipeline {
     environment {
         AWS_DEFAULT_REGION = 'us-east-1'
         EKS_CLUSTER_NAME = 'demo'
-        AWS_ROLE_TO_ASSUME = 'arn:aws:iam::612500737416:role/access-cluster-role'
-        TERRAFORM_DIR = '.terraform'
+       AWS_ROLE_TO_ASSUME = 'arn:aws:iam::612500737416:role/access-cluster-role'
+       TERRAFORM_DIR = '.terraform'
         SLACK_CHANNEL = '#buildstatus-jenkins-pipeline'
         SLACK_TOKEN = credentials('jenkins-slack-integration')
 
-        // Global variable to determine apply or destroy
+        //Global variable to determine apply or destroy
         TF_ACTION = 'apply' // Set this to 'apply' or 'destroy' based on your needs
 
-        // Temporary AWS credentials
+        //Temporary AWS credentials
         TEMP_AWS_ACCESS_KEY_ID = ''
         TEMP_AWS_SECRET_ACCESS_KEY = ''
         TEMP_AWS_SESSION_TOKEN = ''
@@ -77,7 +77,7 @@ pipeline {
         }
     }
 }
-
+*/
 
         stage('Update kube-config') {
             steps {
