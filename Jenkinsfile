@@ -44,8 +44,8 @@ pipeline {
             }
         }
     }
-}
-    /*post {
+
+   /* post {
         success {
             // Notify success on Slack
             script {
@@ -68,5 +68,5 @@ pipeline {
                 )
             }
         }
-/*    }
+    }*/
 }
