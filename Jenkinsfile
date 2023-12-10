@@ -32,7 +32,7 @@ pipeline {
                     }
                 }
             }
-        }
+
 
         stage('Deploy to Kubernetes') {
             steps {
@@ -46,10 +46,7 @@ pipeline {
             }
         }
 
-
-}
-
-    }
+        }
 
 
     post {
@@ -76,4 +73,6 @@ pipeline {
             }
         }
     }
+}
+
 }
