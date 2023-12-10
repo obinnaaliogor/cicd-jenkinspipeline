@@ -11,3 +11,7 @@ chmod +x terraform_script.sh
 #Ensure you openned port 8080 on the jenkins server
 
 https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+
+Jenkins-github webook
+http://3.81.235.160:8080/github-webhook/
+application/json
