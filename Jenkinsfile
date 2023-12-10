@@ -8,7 +8,7 @@ pipeline {
         SLACK_TOKEN = credentials('jenkins-slack-integration')
         AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
-
+    }
 
     stages {
         stage('Checkout Code') {
@@ -21,18 +21,15 @@ pipeline {
             }
         }
 
-
-
         stage('Update kube-config') {
             steps {
                 script {
                     // Assuming your kube-config file is stored securely in Jenkins credentials
                     //withCredentials([file(credentialsId: 'kube-config-credentials', variable: 'KUBE_CONFIG')]) {
                     sh 'aws eks update-kubeconfig --name ${env.EKS_CLUSTER_NAME} --region us-east-1'
-                    }
                 }
             }
-
+        }
 
         stage('Deploy to Kubernetes') {
             steps {
@@ -45,9 +42,7 @@ pipeline {
                 }
             }
         }
-
-        }
-
+    }
 
     post {
         success {
@@ -73,6 +68,4 @@ pipeline {
             }
         }
     }
-}
-
 }
