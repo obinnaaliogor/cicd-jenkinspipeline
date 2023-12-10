@@ -44,7 +44,7 @@ pipeline {
             }
         }
     }
-
+}
     /*post {
         success {
             // Notify success on Slack
@@ -68,6 +68,5 @@ pipeline {
                 )
             }
         }
-    }
+/*    }
 }
-/*
