@@ -45,7 +45,7 @@ pipeline {
         }
     }
 
-   /* post {
+    post {
         success {
             // Notify success on Slack
             script {
@@ -53,7 +53,9 @@ pipeline {
                     channel: SLACK_CHANNEL,
                     color: 'good',
                     message: "Pipeline succeeded for ${env.JOB_NAME} ${env.BUILD_NUMBER}: ${env.BUILD_URL}",
-                    tokenCredentialId: SLACK_TOKEN
+                    slackSend channel: "#buildstatus-jenkins-pipeline" , message: "Build started: ${env.JOB_NAME} ${env.BUILD_NUMBER} ${env.BUILD_URL}"
+                
+
                 )
             }
         }
@@ -64,9 +66,10 @@ pipeline {
                     channel: SLACK_CHANNEL,
                     color: 'danger',
                     message: "Pipeline failed for ${env.JOB_NAME} ${env.BUILD_NUMBER}: ${env.BUILD_URL}",
-                    tokenCredentialId: SLACK_TOKEN
+                    slackSend channel: "#buildstatus-jenkins-pipeline" , message: "Build started: ${env.JOB_NAME} ${env.BUILD_NUMBER} ${env.BUILD_URL}"
+
                 )
             }
         }
-    }*/
+    }
 }
