@@ -119,3 +119,11 @@ The Jenkins pipeline consists of the following stages:
 - [AWS CLI Documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
 - [Jenkins Slack Integration Plugin](https://plugins.jenkins.io/slack/)
 - [Amazon EKS Documentation](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html)
+
+## Executing the shell script.
+
+```bash
+chmod +x terraform_script.sh
+./terraform_script.sh apply
+# or
+./terraform_script.sh destroy
